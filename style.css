@@ -106,16 +106,28 @@ h1 {
 .gorjeta-area {
   display: flex;
   align-items: center;
-  gap: 10px;
-  /* Espaçamento entre os elementos */
+  gap: 15px;
   margin-bottom: 20px;
   flex-wrap: wrap;
-  /* Permite que os itens quebrem para a próxima linha em telas menores */
+  row-gap: 10px;
 }
 
-.input-area label,
-.gorjeta-area label {
-  margin-right: 5px;
+.input-area {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto auto auto;
+  align-items: center;
+  gap: 10px 15px;
+  position: relative;
+}
+
+#btn-adicionar {
+  justify-self: end;
+  grid-column: -2 / -1;
+}
+
+.input-area label {
+  white-space: nowrap;
+  margin-right: 0;
 }
 
 .input-area select,
@@ -125,10 +137,10 @@ h1 {
   padding: 8px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
-  flex-grow: 1;
   background-color: var(--input-bg);
   color: var(--text-color);
-  /* Permite que os inputs cresçam para preencher o espaço */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-area input[type="text"] {
@@ -140,18 +152,42 @@ h1 {
 
 .input-area select {
   min-width: 150px;
-  /* Largura mínima para o select */
 }
 
 .input-area input#quantidade {
-  width: 60px;
-  /* Largura fixa para quantidade */
-  flex-grow: 0;
+  width: 70px;
+}
+
+.gorjeta-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .gorjeta-area input#gorjeta-percentual {
   width: 60px;
-  flex-grow: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .input-area {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .input-area label {
+    grid-column: 1;
+  }
+  
+  .input-area select,
+  .input-area input {
+    grid-column: 2;
+  }
+  
+  #btn-adicionar {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
 }
 
 
