@@ -257,11 +257,8 @@ th {
 }
 
 td:nth-child(2),
-/* Quantidade */
 td:nth-child(3),
-/* Preço Unitário */
 td:nth-child(4) {
-  /* Total Item */
   text-align: right;
 }
 

@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('data-theme', 'dark');
   }
 
-    let contaAtual = []; // Array para armazenar os itens da conta
+    let contaAtual = [];
 
     menuItens.forEach(item => {
         const option = document.createElement('option');
@@ -111,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
             tabelaContaBody.appendChild(tr);
         });
 
-        // Adiciona os event listeners para os botões de remoção
         document.querySelectorAll('.btn-remover').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.stopPropagation();
