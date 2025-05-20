@@ -98,16 +98,35 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizarTabela() {
         tabelaContaBody.innerHTML = '';
 
-        contaAtual.forEach(item => {
+        contaAtual.forEach((item, index) => {
             const tr = document.createElement('tr');
+            tr.dataset.index = index;
             tr.innerHTML = `
                 <td>${item.nome}</td>
                 <td class="text-right">${item.quantidade}</td>
                 <td class="text-right">R$ ${item.precoUnitario.toFixed(2)}</td>
                 <td class="text-right">R$ ${item.totalItem.toFixed(2)}</td>
+                <td class="text-center"><button class="btn-remover" data-index="${index}" title="Remover item">×</button></td>
             `;
             tabelaContaBody.appendChild(tr);
         });
+
+        // Adiciona os event listeners para os botões de remoção
+        document.querySelectorAll('.btn-remover').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const index = parseInt(btn.dataset.index);
+                removerItem(index);
+            });
+        });
+    }
+
+    function removerItem(index) {
+        if (index >= 0 && index < contaAtual.length) {
+            contaAtual.splice(index, 1);
+            renderizarTabela();
+            atualizarSubtotal();
+        }
     }
 
     function atualizarSubtotal() {
