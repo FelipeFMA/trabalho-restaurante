@@ -222,11 +222,33 @@ button:not(#dark-mode-toggle):hover {
 #tabela-conta td:last-child {
     width: 60px;
     text-align: center;
-    padding: 8px 4px;
+    padding: 0;
+    vertical-align: middle;
 }
 
 #tabela-conta th:last-child {
     width: 60px;
+}
+
+.btn-remover {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-remover:hover {
+    background-color: #c82333;
 }
 
 #btn-fechar-conta {
