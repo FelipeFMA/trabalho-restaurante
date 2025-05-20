@@ -1,4 +1,31 @@
+// Dark mode functionality
+function setTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+// Check for saved user preference, if any, on load
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+  setTheme('dark');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Dark mode toggle event listener
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  darkModeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    if (currentTheme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  });
     const menuItens = [
         { nome: "Pizza", preco: 40.00 },
         { nome: "Lasanha", preco: 30.00 },
@@ -18,6 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnFecharConta = document.getElementById('btn-fechar-conta');
     const btnLimpar = document.getElementById('btn-limpar');
     const resultadoFinalDiv = document.getElementById('resultado-final-div');
+  
+  // Set initial theme on page load
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
 
     let contaAtual = []; // Array para armazenar os itens da conta
 
