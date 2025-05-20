@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subtotalContaSpan = document.getElementById('subtotal-conta');
     const gorjetaPercentualInput = document.getElementById('gorjeta-percentual');
     const btnFecharConta = document.getElementById('btn-fechar-conta');
+    const btnLimpar = document.getElementById('btn-limpar');
     const resultadoFinalDiv = document.getElementById('resultado-final-div');
 
     let contaAtual = []; // Array para armazenar os itens da conta
@@ -123,6 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
         resultadoFinalDiv.innerHTML = `Valor final com ${percentualGorjeta}% de gorjeta: R$ ${valorFinal.toFixed(2)}`;
         resultadoFinalDiv.style.display = 'block';
     });
+
+    // Função para limpar toda a conta
+    function limparConta() {
+        contaAtual = [];
+        renderizarTabela();
+        subtotalContaSpan.textContent = '0.00';
+        resultadoFinalDiv.style.display = 'none';
+        itemSelect.value = '';
+        precoUnitarioInput.value = '';
+        quantidadeInput.value = '1';
+        gorjetaPercentualInput.value = '10';
+    }
+
+    // Adiciona evento de clique ao botão Limpar Tudo
+    btnLimpar.addEventListener('click', limparConta);
 
     // Inicializa o campo de preço se um item já estiver selecionado ao carregar (pouco provável com o "--Selecione--")
     if (itemSelect.value) {
