@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta do Restaurante</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Conta do Restaurante</h1>
+
+    <div class="input-area">
+      <label for="item-select">Item:</label>
+      <select id="item-select">
+        <option value="">-- Selecione --</option>
+        <!-- Options will be populated by JavaScript -->
+      </select>
+
+      <label for="preco-unitario">Preço Unitário:</label>
+      <input type="text" id="preco-unitario" readonly>
+
+      <label for="quantidade">Quantidade:</label>
+      <input type="number" id="quantidade" value="1" min="1">
+
+      <button id="btn-adicionar">Adicionar</button>
+    </div>
+
+    <table id="tabela-conta">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantidade</th>
+          <th>Preço Unitário</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Itens da conta serão adicionados aqui -->
+      </tbody>
+    </table>
+
+    <div class="total-geral">
+      <strong>Total: R$ <span id="subtotal-conta">0.00</span></strong>
+    </div>
+
+    <div class="gorjeta-area">
+      <label for="gorjeta-percentual">Gorjeta (%):</label>
+      <input type="number" id="gorjeta-percentual" value="10" min="0">
+      <button id="btn-fechar-conta">Fechar Conta</button>
+    </div>
+
+    <div class="resultado-final" id="resultado-final-div" style="display: none;">
+      <!-- Mensagem do valor final será mostrada aqui -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
