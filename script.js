@@ -97,6 +97,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderizarTabela() {
         tabelaContaBody.innerHTML = '';
+        const thead = document.querySelector('#tabela-conta thead');
+        
+        if (contaAtual.length === 0) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td colspan="5" class="empty-cart-message">
+                    <div class="empty-cart-content">
+                        🛒<br>
+                        Nenhum item adicionado ao carrinho.<br>
+                        <small>Selecione os itens do menu acima para começar.</small>
+                    </div>
+                </td>
+            `;
+            tabelaContaBody.appendChild(tr);
+            thead.style.display = 'none';
+            return;
+        }
+        
+        thead.style.display = '';
 
         contaAtual.forEach((item, index) => {
             const tr = document.createElement('tr');
@@ -175,5 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (itemSelect.value) {
         itemSelect.dispatchEvent(new Event('change'));
     }
+
+    renderizarTabela();
 });
 

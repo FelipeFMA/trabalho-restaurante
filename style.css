@@ -266,6 +266,31 @@ table {
   margin-bottom: 20px;
 }
 
+.empty-cart-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.empty-cart-content {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.empty-cart-message div {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.empty-cart-message small {
+  font-size: 0.9em;
+  opacity: 0.7;
+  display: block;
+  margin-top: 8px;
+}
+
 th,
 td {
   border: 1px solid var(--border-color);
