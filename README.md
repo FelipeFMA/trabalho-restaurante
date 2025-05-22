@@ -1,6 +1,7 @@
 # Trabalho de Faculdade - Sistema de Restaurante
 
 Este é um projeto simples desenvolvido como parte de uma atividade acadêmica. O objetivo é criar um sistema básico para gerenciamento de pedidos de um restaurante.
+![image](https://github.com/user-attachments/assets/7248c9c4-6350-40d4-89e6-aa4569ef3722)
 
 ## Descrição
 
