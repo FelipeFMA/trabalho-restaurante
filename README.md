@@ -16,3 +16,8 @@ O projeto consiste em uma aplicação web simples para gerenciar pedidos de um r
 ## Como Executar
 
 Basta abrir o arquivo `index.html` em qualquer navegador web moderno para utilizar a aplicação.
+
+## Autores
+
+- Felipe Figueiredo Matias Avelar
+- Pedro Henrique Anibal Rocha Silva

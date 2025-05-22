@@ -1,3 +1,7 @@
+// Felipe Figueiredo Matias Avelar
+// Pedro Henrique Anibal Rocha Silva
+
+
 function setTheme(theme) {
   if (theme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
